@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>This is where everything starts!</h1>
+
+<h5>Game of Thrones Characters</h5>
+{% for keys,values in characters.items() %} <!--percent sign should not have space between bracket-->
+    {% if keys == "males" %}
+        {% for name in values %}
+            <ul>
+                <li>{{name}}</li>
+            </ul>
+        {% endfor %}
+    {% else %}
+        {% for name in values %}
+            <ul>
+                <li>{{name}}</li>
+            </ul>
+        {% endfor %}
+    {% endif %}
+{% endfor %}
+
+{{name}}
+
+{% endblock %}

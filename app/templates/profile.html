@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if gender == 'Male' %}
+    <h1>{{name}}</h1> - <span>{{gender}}</span>
+{% else %}
+    <h1>{{name}}</h1> - <span>{{gender}}</span>
+{% endif %}
+
+<h5>Information</h5>
+
+{% if info != {} %}
+    {% for keys,values in info.items() %}
+        {% if keys == 'profile_pic' %}
+            <img src = "{{ values }}" alt="Profile Pic">
+        {% else %}
+            <p><b>{{keys.title()}}: </b>{{ values }}</p>
+        {% endif %}
+    {% endfor %}
+{% else %}
+    <p>This character has no info available</p>
+{% endif %}
+
+{% endblock %}
